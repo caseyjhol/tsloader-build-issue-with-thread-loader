@@ -8,24 +8,31 @@ This repo demonstrates a build error when using `thread-loader` in combination w
 - try to build `yarn build`
 
 An error should be displayed:
+
 ```
-yarn run v1.16.0
+yarn run v1.22.5
 warning package.json: No license field
-warning ../../package.json: No license field
 $ webpack
 [webpack-cli] Compilation finished
-assets by status 763 bytes [cached] 1 asset
-./src/app.ts 39 bytes [built] [code generated] [1 error]
+Hash: 544620ab4b9aa5be4c32
+Version: webpack 4.44.2
+Time: 564ms
+Built at: 01/20/2021 5:32:04 PM
+    Asset      Size  Chunks  Chunk Names
+bundle.js  8.12 KiB       0  main
+Entrypoint main = bundle.js
+[0] ./src/app.ts 1.12 KiB {0} [built] [failed] [1 error]
 
 ERROR in ./src/app.ts
 Module build failed (from ./node_modules/thread-loader/dist/cjs.js):
 Thread Loader (Worker 0)
-Invalid value used as weak map key
-    at PoolWorker.fromErrorObj (/Users/valeriopipolo/repos/tsloader-build-issue-with-thread-loader/node_modules/thread-loader/dist/WorkerPool.js:344:12)
-    at /Users/valeriopipolo/repos/tsloader-build-issue-with-thread-loader/node_modules/thread-loader/dist/WorkerPool.js:217:29
-    at WeakMap.set (<anonymous>)
-    at Object.getTypeScriptInstance (/Users/valeriopipolo/repos/tsloader-build-issue-with-thread-loader/node_modules/ts-loader/dist/instances.js:37:23)
-    at Object.loader (/Users/valeriopipolo/repos/tsloader-build-issue-with-thread-loader/node_modules/ts-loader/dist/index.js:16:41)
-
-webpack 5.3.2 compiled with 1 error in 473 ms
+Cannot read property 'hooks' of undefined
+    at PoolWorker.fromErrorObj (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/thread-loader/dist/WorkerPool.js:344:12)
+    at /home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/thread-loader/dist/WorkerPool.js:217:29
+    at mapSeries (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/neo-async/async.js:3625:14)
+    at PoolWorker.onWorkerMessage (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/thread-loader/dist/WorkerPool.js:171:34)
+    at Object.initializeInstance (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/ts-loader/dist/instances.js:264:31)
+    at successLoader (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/ts-loader/dist/index.js:26:17)
+    at Object.loader (/home/cholzer/git/caseyjhol/tsloader-build-issue-with-thread-loader/node_modules/ts-loader/dist/index.js:23:5)
+error Command failed with exit code 1.
 ```
