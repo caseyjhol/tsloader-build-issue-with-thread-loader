@@ -1,16 +1,16 @@
 {
-  "name": "ts-loader-leak",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "dependencies": {
-    "thread-loader": "3.0.1",
-    "ts-loader": "8.0.8",
-    "typescript": "4.0.5",
-    "webpack": "4.44.2"
-  },
-  "devDependencies": {
-    "webpack-cli": "^4.1.0"
-  }
+	"name": "ts-loader-leak",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack"
+	},
+	"dependencies": {
+		"thread-loader": "3.0.1",
+		"ts-loader": "^8.0.11",
+		"typescript": "4.0.5",
+		"webpack": "4.44.2"
+	},
+	"devDependencies": {
+		"webpack-cli": "^4.1.0"
+	}
 }
